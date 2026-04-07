@@ -1,0 +1,269 @@
+{
+  "metadata": {
+    "version": "1.0",
+    "last_updated": "2026-04",
+    "description": "Element complexity baseline scores for UNEXUSI complexity framework",
+    "scoring_scale": "1-9 per property, TC normalized to 0-10",
+    "reference": "complexity/element-table.md",
+    "baseline_element": "gold"
+  },
+  "property_keys": {
+    "Pc": "Composition complexity",
+    "Pcs": "Crystal structure complexity",
+    "Dp": "Particle size complexity",
+    "Ps": "Sphericity complexity",
+    "H": "Hardness (Mohs-based)",
+    "rho": "Density complexity",
+    "k": "Thermal conductivity complexity",
+    "Tm": "Melting point complexity",
+    "rho_e": "Electrical resistivity complexity",
+    "C": "Color complexity",
+    "TC": "Total complexity (sum of all properties)",
+    "TC_norm": "Normalized complexity score (0-10 scale)"
+  },
+  "elements": {
+    "gold": {
+      "symbol": "Au",
+      "atomic_number": 79,
+      "framework_role": "complexity_standard",
+      "description": "Reference baseline — noble, stable, well-characterized",
+      "scores": {
+        "Pc": 1,
+        "Pcs": 1,
+        "Dp": 1,
+        "Ps": 1,
+        "H": 3,
+        "rho": 1,
+        "k": 1,
+        "Tm": 1,
+        "rho_e": 1,
+        "C": 1
+      },
+      "TC": 13,
+      "TC_norm": 4.3
+    },
+    "carbon": {
+      "symbol": "C",
+      "atomic_number": 6,
+      "framework_role": "life_substrate",
+      "description": "Highest complexity — allotropic variability (diamond, graphite, graphene, fullerenes)",
+      "scores": {
+        "Pc": 4,
+        "Pcs": 8,
+        "Dp": 1,
+        "Ps": 1,
+        "H": 9,
+        "rho": 1,
+        "k": 7,
+        "Tm": 1,
+        "rho_e": 7,
+        "C": 1
+      },
+      "TC": 39,
+      "TC_norm": 7.8
+    },
+    "silicon": {
+      "symbol": "Si",
+      "atomic_number": 14,
+      "framework_role": "semiconductor_reference",
+      "description": "High hardness and variable electrical behavior (semiconductor)",
+      "scores": {
+        "Pc": 3,
+        "Pcs": 4,
+        "Dp": 1,
+        "Ps": 1,
+        "H": 8,
+        "rho": 1,
+        "k": 5,
+        "Tm": 1,
+        "rho_e": 5,
+        "C": 1
+      },
+      "TC": 29,
+      "TC_norm": 5.8
+    },
+    "oxygen": {
+      "symbol": "O",
+      "atomic_number": 8,
+      "framework_role": "lower_anchor",
+      "description": "Lowest complexity in dataset — diatomic elemental solid",
+      "scores": {
+        "Pc": 1,
+        "Pcs": 1,
+        "Dp": 1,
+        "Ps": 1,
+        "H": 2,
+        "rho": 1,
+        "k": 3,
+        "Tm": 1,
+        "rho_e": 5,
+        "C": 1
+      },
+      "TC": 16,
+      "TC_norm": 3.2
+    },
+    "aluminum": {
+      "symbol": "Al",
+      "atomic_number": 13,
+      "framework_role": "standard_reference",
+      "description": "Common structural metal, moderate complexity",
+      "scores": {
+        "Pc": 2,
+        "Pcs": 3,
+        "Dp": 1,
+        "Ps": 1,
+        "H": 5,
+        "rho": 1,
+        "k": 4,
+        "Tm": 1,
+        "rho_e": 9,
+        "C": 1
+      },
+      "TC": 27,
+      "TC_norm": 5.4
+    },
+    "iron": {
+      "symbol": "Fe",
+      "atomic_number": 26,
+      "framework_role": "stellar_anchor",
+      "description": "Peak nuclear binding energy — most stable nucleus per nucleon",
+      "scores": {
+        "Pc": 2,
+        "Pcs": 5,
+        "Dp": 1,
+        "Ps": 1,
+        "H": 6,
+        "rho": 1,
+        "k": 5,
+        "Tm": 1,
+        "rho_e": 3,
+        "C": 1
+      },
+      "TC": 25,
+      "TC_norm": 5.0
+    },
+    "titanium": {
+      "symbol": "Ti",
+      "atomic_number": 22,
+      "framework_role": "standard_reference",
+      "description": "Moderate complexity, high strength-to-weight ratio",
+      "scores": {
+        "Pc": 2,
+        "Pcs": 3,
+        "Dp": 1,
+        "Ps": 1,
+        "H": 5,
+        "rho": 1,
+        "k": 3,
+        "Tm": 1,
+        "rho_e": 5,
+        "C": 1
+      },
+      "TC": 22,
+      "TC_norm": 4.4
+    },
+    "zirconium": {
+      "symbol": "Zr",
+      "atomic_number": 40,
+      "framework_role": "standard_reference",
+      "description": "Similar to titanium, corrosion resistant",
+      "scores": {
+        "Pc": 2,
+        "Pcs": 3,
+        "Dp": 1,
+        "Ps": 1,
+        "H": 7,
+        "rho": 1,
+        "k": 3,
+        "Tm": 1,
+        "rho_e": 3,
+        "C": 1
+      },
+      "TC": 22,
+      "TC_norm": 4.4
+    },
+    "calcium": {
+      "symbol": "Ca",
+      "atomic_number": 20,
+      "framework_role": "standard_reference",
+      "description": "Alkaline earth metal, biological importance",
+      "scores": {
+        "Pc": 2,
+        "Pcs": 3,
+        "Dp": 1,
+        "Ps": 1,
+        "H": 3,
+        "rho": 1,
+        "k": 2,
+        "Tm": 1,
+        "rho_e": 9,
+        "C": 1
+      },
+      "TC": 23,
+      "TC_norm": 4.6
+    },
+    "sodium": {
+      "symbol": "Na",
+      "atomic_number": 11,
+      "framework_role": "standard_reference",
+      "description": "Alkali metal, highly reactive",
+      "scores": {
+        "Pc": 2,
+        "Pcs": 5,
+        "Dp": 1,
+        "Ps": 1,
+        "H": 1,
+        "rho": 1,
+        "k": 5,
+        "Tm": 1,
+        "rho_e": 9,
+        "C": 1
+      },
+      "TC": 26,
+      "TC_norm": 5.2
+    }
+  },
+  "framework_roles": {
+    "complexity_standard": "gold — calibration baseline, TC_norm 4.3",
+    "life_substrate": "carbon — organic complexity foundation, TC_norm 7.8",
+    "lower_anchor": "oxygen — minimum complexity reference, TC_norm 3.2",
+    "stellar_anchor": "iron — peak nuclear binding energy, TC_norm 5.0",
+    "visionary_seed": "hydrogen — first element, origin state (score pending)",
+    "stability_boundary": "lead — last doubly-magic nucleus (score pending)",
+    "threshold_guardian": "bismuth — beyond stability cliff (score pending)"
+  },
+  "expansion_queue": [
+    {
+      "element": "hydrogen",
+      "symbol": "H",
+      "atomic_number": 1,
+      "framework_role": "visionary_seed",
+      "status": "pending_score",
+      "notes": "First element, simplest structure, origin seed"
+    },
+    {
+      "element": "lead",
+      "symbol": "Pb",
+      "atomic_number": 82,
+      "framework_role": "stability_boundary",
+      "status": "pending_score",
+      "notes": "Doubly-magic nucleus Z=82 N=126, last stable heavy element"
+    },
+    {
+      "element": "bismuth",
+      "symbol": "Bi",
+      "atomic_number": 83,
+      "framework_role": "threshold_guardian",
+      "status": "pending_score",
+      "notes": "Technically radioactive, half-life 2e19 years, most diamagnetic element"
+    },
+    {
+      "element": "cobalt",
+      "symbol": "Co",
+      "atomic_number": 27,
+      "framework_role": "living_crystal_trace",
+      "status": "pending_score",
+      "notes": "Essential trace element in B12, cobalt blue optical signature"
+    }
+  ]
+}
