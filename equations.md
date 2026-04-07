@@ -250,20 +250,18 @@ color complexity. Full scoring table in element-table.md.
 
 The relationship between T(t) and K(t) over time:
 
-```
 Score
 1.0 |
-    |\         K(t) rising →
+    |\         T(t) falling →
     | \
     |  \    X ← t* ≈ 1.718
     |   \  /
     |    \/
     |    /\
     |   /  \
-    |  /    ← T(t) falling
+    |  /    ← K(t) rising
 0.0 |________________________→ time
     0    1    2    3    4
-```
 
 The intersection at t* ≈ 1.718 is the balance point between complexity
 and understanding. Before it: complexity dominates. After it: knowledge
