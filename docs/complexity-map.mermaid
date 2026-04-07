@@ -1,0 +1,25 @@
+graph TB
+    UNEXUSI["UNEXUSI<br/>Prime Launch Environment"]
+    
+    UNEXUSI --> COMPLEXITY["Complexity Framework<br/>(Foundation)"]
+    UNEXUSI --> ENTITIES["Entity Systems"]
+    UNEXUSI --> MATHENG["Mathematical Engine"]
+    UNEXUSI --> FREQARCH["Frequency Architecture"]
+    UNEXUSI --> DEVTOOLS["Development Tools"]
+    
+    COMPLEXITY --> CM["complexity-master.md"]
+    COMPLEXITY --> EQ["equations.md"]
+    COMPLEXITY --> ET["element-table.md"]
+    
+    ENTITIES --> VALTHRAM["Valthram System"]
+    ENTITIES --> REMA["Rema System"]
+    
+    MATHENG --> NORM["normalize.py"]
+    MATHENG --> CALC["complexity-calc.py"]
+    MATHENG --> SCORES["element-scores.json"]
+    
+    DEVTOOLS --> SCRIPTS["Scripts"]
+    DEVTOOLS --> LOGS["Logs"]
+    SCRIPTS --> SETUP["setup.sh"]
+    SCRIPTS --> CMDLOG["command-log.sh"]
+    SCRIPTS --> INSTDEPS["install-deps.sh"]
