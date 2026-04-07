@@ -228,7 +228,7 @@ $$TC_{norm} = \frac{TC}{TC_{max}} \times 10$$
 |--------|---------|
 | P_j | Complexity score for property j (range 1-9) |
 | TC | Total complexity (sum of all property scores) |
-| TC_max | Maximum possible TC in the dataset (30 for 10 properties) |
+| TC_max | Maximum possible TC for normalization (50, based on calibration) |
 | TC_norm | Normalized score on 0-10 scale |
 
 ### What it does
