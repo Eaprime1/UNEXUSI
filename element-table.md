@@ -46,8 +46,7 @@ TC_norm = 4.3. All other elements are interpreted relative to this baseline.
 
 $$TC_{norm} = \frac{TC}{TC_{max}} \times 10$$
 
-Where TC_max = 30 (10 properties × maximum score of 3 for baseline
-calibration). This places TC_norm on a 0-10 scale.
+Where TC_max = 50 (based on framework calibration). This places TC_norm on a 0-10 scale.
 
 ---
 
