@@ -12,13 +12,34 @@
 
 ---
 
+## DEVICE-CHARACTER MODEL
+
+Each physical device in the UNEXUSI ecosystem has one or more **character concepts** —
+named identities that represent how the device operates in a given mode.
+The same hardware can hold different characters depending on its active state.
+
+```
+DEVICE          → CHARACTER(S)         MODE
+──────────────────────────────────────────────────────────
+Ubuntu laptop   → AXIOM                GUI mode — working podium
+                → INCUBATOR            Terminal-only mode — the lab
+Android Pixel   → PIXEL8A              Mobile terminal / Termux
+[future]        → [new character]      As devices join the ecosystem
+```
+
+A device's character is not its hardware — it is its **mode of being**.
+AXIOM and INCUBATOR are the same machine. Different characters. Different capabilities.
+
+---
+
 ## REGISTRY OVERVIEW
 
 ```
 UNEXUSI CONTROL CENTER
 │
-├── DEVICES ──────────────── Physical & virtual platforms
-│   ├── AXIOM (primary)      Ubuntu laptop — main working podium
+├── DEVICES ──────────────── Physical platforms + character concepts
+│   ├── AXIOM (primary)      Ubuntu laptop GUI — main working podium
+│   ├── INCUBATOR            Ubuntu laptop terminal-only — the lab
 │   └── PIXEL8A              Android/Termux — mobile terminal
 │
 ├── REPOS ────────────────── All chain-of-custody repositories
@@ -44,8 +65,9 @@ UNEXUSI CONTROL CENTER
 
 | ID | Name | Type | User | Status | Detail |
 |----|------|------|------|--------|--------|
-| D-01 | AXIOM | Ubuntu laptop | `axiom` | Setting up | Primary working podium — PRIMAL dev |
-| D-02 | PIXEL8A | Android / Termux | `pixel` | Active | Mobile terminal — six aspect consortium |
+| D-01 | AXIOM | Ubuntu laptop | GUI mode | `axiom` | Active | Primary working podium — PRIMAL dev |
+| D-02 | INCUBATOR | Ubuntu laptop | Terminal-only | `axiom` | Concept | Same machine as AXIOM — stripped mode |
+| D-03 | PIXEL8A | Android / Termux | Mobile | `pixel` | Active | Mobile terminal — six aspect consortium |
 
 ### D-01 — AXIOM
 **Role:** Primary working platform for all PRIMAL / fractal development.
