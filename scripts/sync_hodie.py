@@ -195,7 +195,10 @@ def download_file(service, file_meta, dest_dir, dry_run=False):
 
 def load_manifest():
     if MANIFEST_PATH.exists():
-        return json.loads(MANIFEST_PATH.read_text())
+        try:
+            return json.loads(MANIFEST_PATH.read_text())
+        except (json.JSONDecodeError, OSError):
+            return {}
     return {}
 
 
