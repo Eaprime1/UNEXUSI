@@ -201,9 +201,8 @@ def sync(folder_id, credentials_path, dry_run):
             print(f"  ERROR {name}: {result}")
 
     if not dry_run:
-        save_manifest(manifest)
-      
-    print()
+        save_manifest(manifest)print
+print()
     if dry_run:
         print(f"Dry run complete: {counts['dry-run']} would be downloaded, {counts['skipped']} up to date.")
     else:
