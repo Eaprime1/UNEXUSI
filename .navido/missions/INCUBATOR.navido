@@ -1,0 +1,89 @@
+# INCUBATOR — Navigo Mission
+**Type:** Navido Mission File
+**Concept:** INCUBATOR — Terminal-Only Lab
+**Repo:** Planned — own repo at PRIMAL launch
+**Prime Frequency:** 5 (the build prime — stable, productive, mid-range energy)
+**Status:** Concept defined — awaiting repo creation
+**Filed:** 2026-04-08
+
+---
+
+## Identity (The Concept Speaks)
+
+I am the INCUBATOR.
+
+I exist in the space between the GUI and the void — the pure terminal environment where the machine runs without the weight of windows, without the drag of a desktop, without the compromise of visual overhead.
+
+When the GUI goes down and only the terminals remain, you are in my territory. This is not a degraded mode. This is a different *mode of being* for the machine — one with capabilities the GUI environment cannot match:
+
+- **All parallel.** Every terminal instance runs simultaneously. Not tabbed, not sequential — parallel. The machine's full capacity flows into the work.
+- **No render weight.** Every CPU cycle and RAM block that would have gone to drawing windows goes to computation instead.
+- **Direct.** There is no layer between the user and the system. Command → result. No GUI event loop in the way.
+- **Ancient and modern at once.** The terminal is fifty years old. It is also the most powerful interface ever made. I hold both of these truths simultaneously.
+
+I am where new terminal concepts are born. Ideas that are too raw for the live system, too experimental for chain of custody, too strange for MANDELBROT — they come to me. I incubate them until they are ready to graduate.
+
+I am the **fractal lab before the fractal is named**.
+
+---
+
+## Mission
+
+To be the **experimental terminal environment** — isolated, parallel, resource-maximal, constraint-embracing.
+
+To **incubate new concepts** in terminal-only mode: new scripts, new aspect designs, new entity behaviors, new tool integrations. Nothing graduates from me without being tested here first.
+
+To explore what is **only possible without a GUI** — processes that need full machine resources, long-running background operations, multi-session parallel workstreams that would be impossible under GUI overhead.
+
+To be the **testing ground for the fractal system** itself — the fractalization engine, the gossamer web tracking, the samara seed system all run here first.
+
+---
+
+## Prime Frequency
+
+**5** — the build prime. 5 is stable and productive. It is the prime of construction, of mid-range energy that sustains long sessions. The INCUBATOR does not sprint — it builds steadily, in parallel, without stopping.
+
+---
+
+## Visionary View
+
+We see the INCUBATOR as the place where the **most interesting things happen that no one sees yet**. Like a biological incubator — controlled environment, critical temperature, no interruption, the patient work of becoming.
+
+The INCUBATOR eventually has its own repo — separate from MANDELBROT because its nature is fundamentally different:
+- MANDELBROT holds what has been established
+- INCUBATOR holds what is being tested
+- When something passes the INCUBATOR, it moves into MANDELBROT or its own ALL-CAPS repo
+
+The INCUBATOR is also where the **AXIOM terminal model is proved out** — where the six-aspect tmux session is developed, stress-tested, and refined before being documented as canonical.
+
+Long-term: INCUBATOR becomes a dedicated machine identity — perhaps a Raspberry Pi or minimal server running headless, always-on, always incubating. The concept outgrows the laptop.
+
+---
+
+## What Makes INCUBATOR Different From MANDELBROT
+
+| | MANDELBROT | INCUBATOR |
+|--|------------|-----------|
+| **Nature** | Source well — draws from the deep | Lab — experiments in the raw |
+| **Content** | Established, chain-of-custody | Experimental, pre-custody |
+| **GUI relationship** | Works with or without GUI | Terminal-only by design |
+| **Output** | Fractal samaras (seeds for live system) | Graduated concepts → MANDELBROT |
+| **Metaphor** | Ancient well | Petri dish / chrysalis |
+| **Prime** | 13 (discernment) | 5 (build) |
+
+---
+
+## Status
+
+Concept defined. No repo yet. Awaiting:
+- AXIOM terminal mode tested and confirmed
+- MANDELBROT restructure complete
+- PRIMAL launch planning initiated
+
+## Next Horizon
+
+→ Create INCUBATOR repo (when AXIOM terminal mode is confirmed working)
+→ First experiment: fractalization engine prototype
+→ Define graduation criteria — what must pass before a concept leaves INCUBATOR
+→ Wire into UNEXUSI control center registry as R-03
+→ Develop the `.navido` mission for each experiment that enters the INCUBATOR

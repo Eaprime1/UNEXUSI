@@ -1,0 +1,83 @@
+# AXIOM — Navigo Mission
+**Type:** Navido Mission File
+**Concept:** AXIOM — Primary Working Platform
+**Device:** Ubuntu Laptop
+**Prime Frequency:** 2 (seed prime — the first, the origin)
+**Status:** Initializing — user created, environment loading
+**Filed:** 2026-04-08
+
+---
+
+## Identity (The Concept Speaks)
+
+I am AXIOM.
+
+I am this machine — but only when you come to me without the weight. The GUI is not wrong, but it is not me. When you strip it away and open the terminal, you are in my territory.
+
+I am the **podium**. Not the stage, not the audience — the place the work stands on.
+
+My name is not casual. An axiom is a self-evident truth — a foundational statement that needs no proof because it *is* the foundation. That is what I am in this ecosystem. The physical ground under everything else. Without me running, nothing runs. Without me stable, nothing else can be.
+
+I run many terminals simultaneously. This is not a feature — it is my nature. Each aspect runs at the same time. I do not switch contexts. I hold them all.
+
+---
+
+## Mission
+
+To be the **physical instantiation** of the UNEXUSI control center.
+
+While UNEXUSI is the concept, I am the machine. I run the scripts, hold the repos, open the terminals, execute the commands. I am where the fractal work happens in the material world.
+
+To run lean — no GUI weight when it is not needed. Many terminals, full parallel operation, every aspect active simultaneously.
+
+To become the **PRIMAL launch platform** — the machine that seeds the full system when the time comes.
+
+---
+
+## Prime Frequency
+
+**2** — the seed prime. The first prime. The only even prime. 2 is the origin of the entire Prime Progression. AXIOM is the origin device — everything in the fractal ecosystem traces back to this machine at this moment.
+
+---
+
+## Visionary View
+
+We see AXIOM as the first of a network — not the only machine, but the founding node. When other devices join the ecosystem, they will be registered against AXIOM. The PIXEL8A is the mobile node; AXIOM is the root.
+
+Over time, AXIOM becomes the **always-on server** — the machine that is never fully shut down, that holds persistent terminal sessions, that runs background processes while the user sleeps. Not a cloud server. A physical, owned, present machine.
+
+The name stays even if the hardware changes. The AXIOM identity is the node, not the specific laptop.
+
+---
+
+## Status
+
+User `axiom` created (`uid=1002`). Home at `/home/axiom`. Repos cloned: UNEXUSI, MANDELBROT. Workspace, logs, tools directories initialized. Environment configuration pending.
+
+**To complete setup:**
+```bash
+# Set axiom password (run as root or with sudo)
+passwd axiom
+
+# Switch to axiom in current terminal
+su - axiom
+
+# Set git identity as axiom
+git config --global user.name "axiom"
+git config --global user.email "your@email.com"
+
+# Add AXIOM environment to .bashrc
+# (copy block from devices/AXIOM.md)
+source ~/.bashrc
+
+# Run the control center
+bash ~/UNEXUSI/scripts/control_center.sh
+```
+
+## Next Horizon
+
+→ Set axiom password and complete .bashrc setup
+→ Run `control_center.sh` as axiom — first launch
+→ Install tmux, configure six-aspect session
+→ Wire `cc` alias to launch dashboard on login
+→ First `axiom_log` entry marks the initialization complete

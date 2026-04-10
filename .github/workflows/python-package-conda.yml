@@ -37,6 +37,12 @@ jobs:
       - name: Test with pytest
         run: |
           conda install pytest
+          pytest || exit_code=$?
+          if [ "${exit_code:-0}" -eq 5 ]; then
+            echo "No tests were collected by pytest; continuing without failure."
+            exit 0
+          fi
+          exit "${exit_code:-0}"
           pytest
           exit_code=$?
           if [ "$exit_code" -eq 5 ]; then
