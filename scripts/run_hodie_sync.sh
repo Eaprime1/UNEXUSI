@@ -29,6 +29,7 @@ else
     git commit -m "hodie: sync $(date -u '+%Y-%m-%d')"
     git pull --rebase || { git rebase --abort; exit 1; }
     git push
+    git pull --rebase && git push
     echo "Committed and pushed synced files."
 fi
 
