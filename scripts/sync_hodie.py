@@ -171,11 +171,17 @@ def download_file(service, file_meta, dest_dir, dry_run=False):
             request = service.files().get_media(fileId=file_id)
 
         dest.parent.mkdir(parents=True, exist_ok=True)
-        with open(dest, "wb") as fh:
-            downloader = MediaIoBaseDownload(fh, request)
-            done = False
-            while not done:
-                _, done = downloader.next_chunk()
+        temp_dest = dest.with_suffix(dest.suffix + ".tmp")
+        try:
+            with open(temp_dest, "wb") as fh:
+                downloader = MediaIoBaseDownload(fh, request)
+                done = False
+                while not done:
+                    _, done = downloader.next_chunk()
+            temp_dest.replace(dest)
+        finally:
+            if temp_dest.exists():
+                temp_dest.unlink()
 
         return "downloaded", dest
 
