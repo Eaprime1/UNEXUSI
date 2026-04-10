@@ -25,7 +25,7 @@ if git diff --cached --quiet; then
     echo "No new files — nothing to commit."
 else
     git commit -m "hodie: sync $(date -u '+%Y-%m-%d')"
-    git push
+    git pull --rebase && git push
     echo "Committed and pushed synced files."
 fi
 
