@@ -24,6 +24,8 @@ git add hodie/
 if git diff --cached --quiet; then
     echo "No new files — nothing to commit."
 else
+    git config user.name "Hodie Sync"
+    git config user.email "hodie-sync@localhost"
     git commit -m "hodie: sync $(date -u '+%Y-%m-%d')"
     git pull --rebase && git push
     echo "Committed and pushed synced files."

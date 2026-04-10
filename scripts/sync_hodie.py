@@ -49,15 +49,42 @@ def _build_credentials(credentials_path):
 
     env_key = os.environ.get("GDRIVE_SERVICE_ACCOUNT_KEY")
     if env_key:
-        info = json.loads(env_key)
+        try:
+            info = json.loads(env_key)
+        except json.JSONDecodeError as exc:
+            print(
+                f"ERROR: GDRIVE_SERVICE_ACCOUNT_KEY does not contain valid JSON: {exc}",
+                file=sys.stderr,
+            )
+            sys.exit(1)
     elif credentials_path:
-        with open(credentials_path) as f:
-            info = json.load(f)
+        try:
+            with open(credentials_path) as f:
+                info = json.load(f)
+        except FileNotFoundError:
+            print(
+                f"ERROR: Credentials file not found: {credentials_path}",
+                file=sys.stderr,
+            )
+            sys.exit(1)
+        except json.JSONDecodeError as exc:
+            print(
+                f"ERROR: Credentials file is not valid JSON: {credentials_path}: {exc}",
+                file=sys.stderr,
+            )
+            sys.exit(1)
+        except OSError as exc:
+            print(
+                f"ERROR: Could not read credentials file {credentials_path}: {exc}",
+                file=sys.stderr,
+            )
+            sys.exit(1)
     else:
         print(
             "ERROR: No credentials provided.\n"
             "  Use --credentials /path/to/key.json  OR\n"
-            "  set the GDRIVE_SERVICE_ACCOUNT_KEY environment variable."
+            "  set the GDRIVE_SERVICE_ACCOUNT_KEY environment variable.",
+            file=sys.stderr,
         )
         sys.exit(1)
 
@@ -65,7 +92,14 @@ def _build_credentials(credentials_path):
 
 
 def _build_service(credentials_path):
-    from googleapiclient.discovery import build
+    try:
+        from googleapiclient.discovery import build
+    except ImportError:
+        print(
+            "ERROR: google-api-python-client is not installed. Run: pip install -r requirements.txt",
+            file=sys.stderr,
+        )
+        sys.exit(1)
 
     creds = _build_credentials(credentials_path)
     return build("drive", "v3", credentials=creds, cache_discovery=False)
@@ -74,6 +108,18 @@ def _build_service(credentials_path):
 # ---------------------------------------------------------------------------
 # Drive helpers
 # ---------------------------------------------------------------------------
+
+def _local_path(file_meta, dest_dir):
+    """Return the expected local path for a Drive file."""
+    name = file_meta["name"]
+    mime = file_meta["mimeType"]
+    if mime in EXPORT_MAP:
+        _, ext = EXPORT_MAP[mime]
+        local_name = name if name.endswith(ext) else name + ext
+    else:
+        local_name = name
+    return dest_dir / local_name
+
 
 def list_folder(service, folder_id):
     """Return all files (not folders) directly inside folder_id."""
@@ -103,45 +149,34 @@ def list_folder(service, folder_id):
 def download_file(service, file_meta, dest_dir, dry_run=False):
     """
     Download or export a single Drive file.
-    Returns ('downloaded'|'skipped'|'error', local_path_or_message).
+    Returns ('downloaded'|'skipped'|'dry-run'|'error', local_path_or_message).
     """
     from googleapiclient.errors import HttpError
     from googleapiclient.http import MediaIoBaseDownload
-    import io
 
     file_id = file_meta["id"]
     name = file_meta["name"]
-    mime = file_meta["mimeType"]
 
-    if mime in EXPORT_MAP:
-        export_mime, ext = EXPORT_MAP[mime]
-        # Append extension if not already present
-        if not name.endswith(ext):
-            local_name = name + ext
-        else:
-            local_name = name
-    else:
-        local_name = name
-        export_mime = None
-
-    dest = dest_dir / local_name
+    dest = _local_path(file_meta, dest_dir)
 
     if dry_run:
         return "dry-run", dest
 
     try:
-        if export_mime:
+        mime = file_meta["mimeType"]
+        if mime in EXPORT_MAP:
+            export_mime, _ = EXPORT_MAP[mime]
             request = service.files().export_media(fileId=file_id, mimeType=export_mime)
         else:
             request = service.files().get_media(fileId=file_id)
 
-        buf = io.BytesIO()
-        downloader = MediaIoBaseDownload(buf, request)
-        done = False
-        while not done:
-            _, done = downloader.next_chunk()
+        dest.parent.mkdir(parents=True, exist_ok=True)
+        with open(dest, "wb") as fh:
+            downloader = MediaIoBaseDownload(fh, request)
+            done = False
+            while not done:
+                _, done = downloader.next_chunk()
 
-        dest.write_bytes(buf.getvalue())
         return "downloaded", dest
 
     except HttpError as e:
@@ -185,7 +220,8 @@ def sync(folder_id, credentials_path, dry_run):
         name = f.get("name", fid)
 
         cached = manifest.get(fid, {})
-        if cached.get("modifiedTime") == modified and not dry_run:
+        expected_path = _local_path(f, HODIE_LOCAL_DIR)
+        if cached.get("modifiedTime") == modified and not dry_run and expected_path.exists():
             print(f"  skip  {name}  (up to date)")
             counts["skipped"] += 1
             continue
