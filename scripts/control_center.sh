@@ -118,6 +118,7 @@ echo -e "${BOLD}${YELLOW}  ◈ NAVIDO MISSIONS${RESET}"
 NAVIDO_DIR="$UNEXUSI_PATH/.navido/missions"
 if [ -d "$NAVIDO_DIR" ]; then
     for f in "$NAVIDO_DIR"/*.navido; do
+        [ -e "$f" ] || continue
         name=$(basename "$f" .navido)
         status=$(grep "^Status:" "$f" 2>/dev/null | head -1 | sed 's/Status: //' || echo "active")
         echo -e "  ${GREEN}▸${RESET} ${BOLD}${name}${RESET}  ${DIM}${status}${RESET}"
