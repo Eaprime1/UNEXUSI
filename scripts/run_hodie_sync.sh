@@ -8,7 +8,7 @@
 # Cron example (noon UTC daily):
 #   0 12 * * * /path/to/UNEXUSI/scripts/run_hodie_sync.sh >> /var/log/hodie-sync.log 2>&1
 
-set -e
+set -euo pipefail
 
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 REPO_ROOT="$(dirname "$SCRIPT_DIR")"
