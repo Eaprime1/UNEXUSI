@@ -187,6 +187,10 @@ def download_file(service, file_meta, dest_dir, dry_run=False):
 
     except HttpError as e:
         return "error", str(e)
+    except OSError as e:
+        return "error", str(e)
+    except Exception as e:
+        return "error", str(e)
 
 
 # ---------------------------------------------------------------------------
