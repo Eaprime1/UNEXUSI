@@ -63,3 +63,8 @@ yarn-error.log
 .env.*.local
 temp/
 tmp/
+
+# Google Drive credentials
+.secrets/
+gdrive-key*.json
+service-account*.json
