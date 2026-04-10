@@ -27,7 +27,8 @@ else
     git config user.name "Hodie Sync"
     git config user.email "hodie-sync@localhost"
     git commit -m "hodie: sync $(date -u '+%Y-%m-%d')"
-    git pull --rebase && git push
+    git pull --rebase || { git rebase --abort; exit 1; }
+    git push
     echo "Committed and pushed synced files."
 fi
 
