@@ -8,7 +8,9 @@
 # Cron example (noon UTC daily):
 #   0 12 * * * /path/to/UNEXUSI/scripts/run_hodie_sync.sh >> /var/log/hodie-sync.log 2>&1
 
+#<<<<<<< claude/sync-google-drive-folders-Epet -euo pipefail
 set -e
+#>>>>> main
 
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 REPO_ROOT="$(dirname "$SCRIPT_DIR")"
@@ -24,6 +26,7 @@ git add hodie/
 if git diff --cached --quiet; then
     echo "No new files — nothing to commit."
 else
+    git commit -m "hodie: sync $(date -u '+%Y-%m-%d')"
     git config user.name "Hodie Sync"
     git config user.email "hodie-sync@localhost"
     git commit -m "hodie: sync $(date -u '+%Y-%m-%d')"
