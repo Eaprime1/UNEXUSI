@@ -157,7 +157,6 @@ def load_manifest():
         return json.loads(MANIFEST_PATH.read_text())
     return {}
 
-
 def save_manifest(manifest):
     MANIFEST_PATH.write_text(json.dumps(manifest, indent=2))
 
@@ -203,7 +202,7 @@ def sync(folder_id, credentials_path, dry_run):
 
     if not dry_run:
         save_manifest(manifest)
-
+      
     print()
     if dry_run:
         print(f"Dry run complete: {counts['dry-run']} would be downloaded, {counts['skipped']} up to date.")
