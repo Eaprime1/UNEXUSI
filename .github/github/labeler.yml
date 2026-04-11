@@ -1,0 +1,6 @@
+docs:
+  - '**/*.md'
+src:
+  - 'src/**'
+test:
+  - 'tests/**'
