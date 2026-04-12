@@ -1,6 +1,9 @@
-frontend:
-  - 'src/frontend/**'
-backend:
-  - 'src/backend/**'
-docs:
-  - '**/*.md'
+- name: frontend
+  color: "0075ca"
+  description: "Changes to frontend code"
+- name: backend
+  color: "e4e669"
+  description: "Changes to backend code"
+- name: docs
+  color: "0052cc"
+  description: "Documentation changes"
