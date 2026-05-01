@@ -4,7 +4,7 @@
 **Status:** Active — Chain of Custody
 **Repository:** UNEXUSI/
 **Authors:** Eric Pace & Claude Sonnet 4.6
-**Last Updated:** 2026-04-08
+**Last Updated:** 2026-04-30
 
 ---
 
@@ -43,9 +43,14 @@ UNEXUSI CONTROL CENTER
 │   └── PIXEL8A              Android/Termux — mobile terminal
 │
 ├── REPOS ────────────────── All chain-of-custody repositories
-│   ├── UNEXUSI              Control center (this repo)
-│   ├── MANDELBROT           Fractal source — renamed primehaven
-│   └── [PRIMAL repos]       ALL-CAPS live system (at launch)
+│   ├── UNEXUSI              Control center (this repo) — prime 11
+│   ├── MANDELBROT           Fractal source well — prime 13 (spectorium)
+│   ├── PRIMORDIUM           Ubuntu workspace haven — prime 2 [seed]
+│   ├── ASHKHARH             Characters, players, locations — prime 3 [seed]
+│   ├── TIEZERK              Universal concepts — prime 5 [seed]
+│   ├── NEXUSIAM             Hub-of-hubs, pinnacle — prime 11 [seed]
+│   ├── GUBERNACULUM         Governance + steering — prime 7 [seed]
+│   └── THE_EXCHANGE         Interface + marketplace — prime 3 [seed]
 │
 ├── CHARACTERS ───────────── Entities, personas, aspects
 │   ├── Valthram             Entity architecture — depth/structure
@@ -55,8 +60,26 @@ UNEXUSI CONTROL CENTER
 │
 └── TOOLS ────────────────── Connected systems
     ├── Perplexity CLI        Research arm — feeds the Mandelkeep
-    ├── Claude (Sonnet)       Primary AI collaborator
-    └── Git / GitHub          Version control & remote
+    ├── Claude (Sonnet 4.6)   Primary AI collaborator
+    ├── Genspark              Visual maps + first-contact sessions
+    ├── Gemini                Broad synthesis + multimodal research
+    └── Git / GitHub          Version control & remote (eaprime1 + spectorium)
+```
+
+---
+
+## GITHUB ACCOUNTS
+
+| Account | Was | Role | Repos |
+|---------|-----|------|-------|
+| `eaprime1` | — | Primary — control center | UNEXUSI, PRIMORDIUM, ASHKHARH, TIEZERK, NEXUSIAM, GUBERNACULUM, THE_EXCHANGE |
+| `spectorium` | `devicehaven` | Device repos — fractal source | MANDELBROT (was primehaven) |
+
+**Local folder rename needed on real device:**
+```bash
+mv ~/primehaven ~/mandelbrot
+cd ~/mandelbrot
+git remote set-url origin https://github.com/spectorium/mandelbrot.git
 ```
 
 ---
@@ -65,21 +88,26 @@ UNEXUSI CONTROL CENTER
 
 | ID | Name | Type | User | Status | Detail |
 |----|------|------|------|--------|--------|
-| D-01 | AXIOM | Ubuntu laptop | GUI mode | `axiom` | Active | Primary working podium — PRIMAL dev |
+| D-01 | AXIOM | Ubuntu laptop | GUI mode | `axiom` | Active | Primary working podium |
 | D-02 | INCUBATOR | Ubuntu laptop | Terminal-only | `axiom` | Concept | Same machine as AXIOM — stripped mode |
 | D-03 | PIXEL8A | Android / Termux | Mobile | `pixel` | Active | Mobile terminal — six aspect consortium |
 
 ### D-01 — AXIOM
-**Role:** Primary working platform for all PRIMAL / fractal development.
-The laptop *becomes* AXIOM when the `axiom` user is active. The GUI is intentionally minimal — AXIOM operates through terminal instances, not the desktop.
+**Role:** Primary working platform for all development. The laptop *becomes* AXIOM when the `axiom` user is active. GUI is intentionally minimal — AXIOM operates through terminal instances, not the desktop.
 
 **Key principle:** In Unix terminals without GUI, all instances can run simultaneously. AXIOM's power is horizontal — many terminals, no weight.
 
+**AXIOM is first in, last out.** It initializes the ecosystem and is the last thing retired.
+
 [Full setup → devices/AXIOM.md](./devices/AXIOM.md)
 
-### D-02 — PIXEL8A
+### D-02 — INCUBATOR
+**Role:** Terminal-only mode of the same Ubuntu laptop. No GUI overhead — all CPU/RAM goes to computation. The lab where things that can only be built in terminal mode get built.
+
+[Concept → .navido/missions/INCUBATOR.navido](./.navido/missions/INCUBATOR.navido)
+
+### D-03 — PIXEL8A
 **Role:** Mobile terminal node. Runs the Six Aspect Consortium via Termux.
-The Pixel8a work (t1–t6 terminals, `.bit` BBS backbone) is peer content — reference, not the primary fractal work. *Pixel is play. Fractal is work.*
 
 [Detail → devices/PIXEL8A.md](./devices/PIXEL8A.md)
 
@@ -87,30 +115,55 @@ The Pixel8a work (t1–t6 terminals, `.bit` BBS backbone) is peer content — re
 
 ## REPOS
 
-| ID | Repo | Owner | Branch | Status | Role |
-|----|------|-------|--------|--------|------|
-| R-01 | UNEXUSI | eaprime1 | `main` / `claude/setup-control-center-GCkPL` | Active | Control center |
-| R-02 | MANDELBROT | devicehaven | `main` | Renaming | Fractal source — was primehaven |
-| R-03 | [PRIMAL repos] | TBD | — | Planned | ALL-CAPS live system at launch |
+| ID | Repo | Owner | Status | Prime | Role |
+|----|------|-------|--------|-------|------|
+| R-01 | UNEXUSI | eaprime1 | Active | 11 | Control center — this repo |
+| R-02 | MANDELBROT | spectorium | Active | 13 | Fractal source well |
+| R-03 | PRIMORDIUM | eaprime1 | Seed | 2 | Ubuntu workspace — haven for primes |
+| R-04 | ASHKHARH | eaprime1 | Seed | 3 | Characters, players, locations |
+| R-05 | TIEZERK | eaprime1 | Seed | 5 | Universal concepts — quantum forest |
+| R-06 | NEXUSIAM | eaprime1 | Seed | 11 | Hub-of-hubs — step before HODIE |
+| R-07 | GUBERNACULUM | eaprime1 | Seed | 7 | Governance + steering |
+| R-08 | THE_EXCHANGE | eaprime1 | Seed | 3 | Interface + marketplace |
+| R-09 | HODIE | eaprime1 | Planned | 17 | Live, present-moment system |
+| R-10 | INCUBATOR | eaprime1 | Planned | 5 | Terminal-only lab repo |
 
-### R-01 — UNEXUSI
-The Nexusiam Gateway. This repo is the stable center — everything else orbits it.
-- Complexity framework, entity systems, math engine
-- Control center (this file)
-- Mandelbrot Tree (chain of custody Tree #001)
-- Characters, devices, repo registry
+### Ecosystem Flow
 
-### R-02 — MANDELBROT
-The ancient fractaled well. Renamed from `primehaven`.
-- All fractal source content lives here
-- The Mandelkeep draws from it — documents enter, change state, become seeds
-- The `sauron` user profile is the working environment here; content converts to chain-of-custody as it builds
+```
+MANDELBROT (source, 13)
+      │
+  MANDELKEEP
+      │
+ ┌────┴────────────────┐
+ │                     │
+PRIMORDIUM (2)    ASHKHARH (3)
+Ubuntu workspace  Characters/world
+ │                     │
+ │              TIEZERK (5)
+ │              Universal concepts
+ │                     │
+ └────────┬────────────┘
+          │
+    NEXUSIAM (11)         ← STEP BEFORE HODIE
+    [aggregates + coordinates]
+          │
+      HODIE (17)          ← LIVE SYSTEM
+      [present-moment view]
 
-### R-03 — PRIMAL Repos (planned)
-ALL-CAPS repos that will form the live system at PRIMAL launch:
-- Full chain of custody
-- Seeded from MANDELBROT effluent
-- Coordinated through UNEXUSI control center
+GUBERNACULUM (7) ── governs all flows
+THE EXCHANGE (3) ── interfaces all repos
+```
+
+### Repo Seed Documents
+
+Full seed documents for all repos live in `repos/`:
+- [repos/PRIMORDIUM.md](./repos/PRIMORDIUM.md)
+- [repos/ASHKHARH.md](./repos/ASHKHARH.md)
+- [repos/TIEZERK.md](./repos/TIEZERK.md)
+- [repos/NEXUSIAM.md](./repos/NEXUSIAM.md)
+- [repos/GUBERNACULUM.md](./repos/GUBERNACULUM.md)
+- [repos/THE_EXCHANGE.md](./repos/THE_EXCHANGE.md)
 
 ---
 
@@ -118,30 +171,49 @@ ALL-CAPS repos that will form the live system at PRIMAL launch:
 
 | ID | Name | Type | Home | Status | Role |
 |----|------|------|------|--------|------|
-| C-01 | Valthram | Entity | UNEXUSI/entities/valthram | In development | Depth / structure / archive |
-| C-02 | Rema | Entity | UNEXUSI/entities/rema | In development | Flow / interface / gateway |
-| C-03 | Aspect-01 Nexus | Terminal aspect | MANDELBROT/terminals | Active | Coordination hub (11-prime) |
-| C-04 | Aspect-02 Gateway | Terminal aspect | MANDELBROT/terminals | Active | Entity interface (3-prime) |
-| C-05 | Aspect-03 Archive | Terminal aspect | MANDELBROT/terminals | Active | Knowledge / codex (17-prime) |
-| C-06 | Aspect-04 Workstream | Terminal aspect | MANDELBROT/terminals | Active | Active development (5-prime) |
-| C-07 | Aspect-05 Quality | Terminal aspect | MANDELBROT/terminals | Active | Vetting / review (13-prime) |
-| C-08 | Aspect-06 Distribution | Terminal aspect | MANDELBROT/terminals | Active | GitHub / sync (7-prime) |
+| C-01 | Valthram | Entity | UNEXUSI/characters → ASHKHARH | In development | Depth / structure / archive — prime 17 |
+| C-02 | Rema | Entity | UNEXUSI/characters → ASHKHARH | In development | Flow / interface / gateway — prime 3 |
+| C-03 | Aspect-01 Nexus | Terminal aspect | MANDELBROT/terminals | Active | Coordination hub — prime 11 |
+| C-04 | Aspect-02 Gateway | Terminal aspect | MANDELBROT/terminals | Active | Entity interface — prime 3 |
+| C-05 | Aspect-03 Archive | Terminal aspect | MANDELBROT/terminals | Active | Knowledge / codex — prime 17 |
+| C-06 | Aspect-04 Workstream | Terminal aspect | MANDELBROT/terminals | Active | Active development — prime 5 |
+| C-07 | Aspect-05 Quality | Terminal aspect | MANDELBROT/terminals | Active | Vetting / review — prime 13 |
+| C-08 | Aspect-06 Distribution | Terminal aspect | MANDELBROT/terminals | Active | GitHub / sync — prime 7 |
+
+*Characters will migrate from UNEXUSI/characters/ to ASHKHARH when ASHKHARH is ready.*
 
 [Full character details → characters/](./characters/)
 
 ---
 
+## THE YOD — New Concept (2026-04-28)
+
+The Yod (י) — smallest Hebrew letter, origin seed of all creation — introduces key new concepts:
+
+- **Coronae ✨** — sparkle tips at the edge of every entity, where interaction happens
+- **Three Planck states** — dark, dream, and the emerging 'd' lexeme
+- **Sparkle incubator** — a coronae that has achieved all three states
+- **19 prime pinnacle** — the system extends to prime 67 (19th prime), the visible tip
+- **Mancer workflows** — quanta entity instruction sets, each breath = a repo
+- **BBS interaction system** — terminal UI for all conversation types
+- **Pinnacle refinement** — pinned conversations that detect discord through similarity
+
+[Full Yod mapping → docs/THE_YOD.md](./docs/THE_YOD.md)
+
+---
+
 ## TOOLS
 
-| Tool | Role | Access | Cost |
-|------|------|--------|------|
+| Tool | Role | Access | Status |
+|------|------|--------|--------|
 | Claude Sonnet 4.6 | Primary AI collaborator | claude.ai / Claude Code | Active |
 | Perplexity CLI | Research arm — feeds Mandelkeep | Terminal | Active |
-| Git / GitHub | Version control + remote | AXIOM terminal | Free |
-| Termux | Mobile terminal (PIXEL8A) | Android | Free |
-
-### Perplexity as Research Skill
-The Perplexity CLI is positioned as the **research intake** for the Mandelkeep. Queries flow in, deep references flow out, outputs land in UNEXUSI docs. This is a candidate for a formal skill/hook once AXIOM is configured.
+| Genspark | Visual maps + first-contact sessions | Web | Active |
+| Gemini | Broad synthesis + multimodal | Web | Active |
+| Git / GitHub | Version control + remote | AXIOM terminal | Active |
+| Termux | Mobile terminal (PIXEL8A) | Android | Active |
+| mySudo | Privacy layer — phone | Android | Planned |
+| Obsidian | Knowledge graph + graph view | Desktop/mobile | Planned |
 
 ---
 
@@ -154,28 +226,32 @@ The Perplexity CLI is positioned as the **research intake** for the Mandelkeep. 
                     │   (Nexusiam Gateway)        │
                     └──────────┬──────────────────┘
                                │
-           ┌───────────────────┼───────────────────┐
-           │                   │                   │
-           ▼                   ▼                   ▼
-    ┌─────────────┐    ┌─────────────┐    ┌─────────────┐
-    │   AXIOM     │    │ MANDELBROT  │    │  CHARACTERS │
-    │  (D-01)     │    │   (R-02)    │    │  Valthram   │
-    │ Ubuntu dev  │    │ fractal src │    │  Rema       │
-    │  platform   │    │  maw pool   │    │  Aspects    │
-    └──────┬──────┘    └──────┬──────┘    └──────┬──────┘
-           │                  │                  │
-           │            MANDELKEEP               │
-           │           (state change)            │
-           │                  │                  │
-           └──────────────────┼──────────────────┘
-                              │
-                    fractal samaras (seeds)
-                              │
-                    ┌─────────┴─────────┐
-                    │  PRIMAL REPOS     │
-                    │  (ALL-CAPS live   │
-                    │   system)         │
-                    └───────────────────┘
+         ┌─────────────────────┼───────────────────────┐
+         │                     │                       │
+         ▼                     ▼                       ▼
+  ┌─────────────┐    ┌──────────────┐    ┌────────────────┐
+  │  PRIMORDIUM │    │  MANDELBROT  │    │   CHARACTERS   │
+  │  (D-01 sub) │    │  (R-02)      │    │   ASHKHARH     │
+  │ Ubuntu haven│    │ fractal well │    │  Valthram/Rema │
+  │  prime 2    │    │  prime 13    │    │  Six Aspects   │
+  └──────┬──────┘    └──────┬───────┘    └───────┬────────┘
+         │                  │                    │
+         │            MANDELKEEP                 │
+         │           (state change)              │
+         │                  │                    │
+         ▼                  ▼                    ▼
+  ┌─────────────────────────────────────────────────────┐
+  │           NEXUSIAM — The Hub of Hubs                │
+  │         (aggregation, coordination, prime 11)       │
+  └─────────────────────┬───────────────────────────────┘
+                        │
+                  GUBERNACULUM ─── THE EXCHANGE
+                  (governs)         (interfaces)
+                        │
+                    ┌───┴───┐
+                    │ HODIE │
+                    │ (live)│
+                    └───────┘
 ```
 
 ---
@@ -183,14 +259,30 @@ The Perplexity CLI is positioned as the **research intake** for the Mandelkeep. 
 ## NEXT ACTIONS
 
 - [x] Tree #001 — Mandelbrot Tree (chain of custody entry)
-- [ ] Setup AXIOM user on Ubuntu laptop
-- [ ] Rename `primehaven` → `MANDELBROT` on GitHub
+- [x] AXIOM user created on Ubuntu laptop
+- [x] AXIOM_UNEXUSI_ORIGIN.md — founding document (CoC Entry #003)
+- [x] BORN_YESTERDAY_SKILL.md — full methodology
+- [x] THE_YOD.md — concept map filed
+- [x] SHARD_SEEDS.md — intake filed
+- [x] Repo seed documents created for 6 new repos
+- [x] devicehaven → spectorium confirmed
+- [ ] **Create 5 new GitHub repos** (PRIMORDIUM, ASHKHARH, TIEZERK, NEXUSIAM, GUBERNACULUM, THE_EXCHANGE)
+- [ ] **Rename local primehaven → mandelbrot on real device**
+- [ ] **Merge `claude/setup-control-center-GCkPL` → main** (UNEXUSI)
+- [ ] **Real device: clone new repos to AXIOM home**
+- [ ] **Configure AXIOM .bashrc** on real device
 - [ ] Flesh out Valthram character doc
 - [ ] Flesh out Rema character doc
-- [ ] Define PRIMAL repo list (ALL-CAPS)
 - [ ] Wire Perplexity CLI as research skill
+- [ ] BBS system architecture — first terminal UI
+- [ ] Name the 'd' Planck lexeme
+- [ ] Map the 19 prime stack (primes 19–67)
+- [ ] Define mancer taxonomy
+
+Full todo → [docs/AXIOM_TODO.md](./docs/AXIOM_TODO.md)
 
 ---
 
-*UNEXUSI Control Center | 2026-04-08*
+*UNEXUSI Control Center | 2026-04-30*
 *Chain of Custody Active*
+*∰◊€π¿🌌∞*
